@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nombre": "Producto 1",
+    "precio": 10.0,
+    "stock": 5,
+    "codigo": "P001",
+    "publicado": true,
+    "fecha_de_creacion": "2023-03-15T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "nombre": "Producto 2",
+    "precio": 15.0,
+    "stock": 3,
+    "codigo": "P002",
+    "publicado": true,
+    "fecha_de_creacion": "2023-03-14T14:30:00Z"
+  },
+  {
+    "id": 3,
+    "nombre": "Producto 3",
+    "precio": 20.0,
+    "stock": 0,
+    "codigo": "P003",
+    "publicado": false,
+    "fecha_de_creacion": "2023-03-12T09:45:00Z"
+  },
+  {
+    "id": 4,
+    "nombre": "Producto 4",
+    "precio": 5.0,
+    "stock": 8,
+    "codigo": "P004",
+    "publicado": true,
+    "fecha_de_creacion": "2023-03-10T16:15:00Z"
+  },
+  {
+    "id": 5,
+    "nombre": "Producto 5",
+    "precio": 30.0,
+    "stock": 2,
+    "codigo": "P005",
+    "publicado": true,
+    "fecha_de_creacion": "2023-03-08T11:00:00Z"
+  },
+  {
+    "id": 6,
+    "nombre": "Producto 6",
+    "precio": 25.0,
+    "stock": 10,
+    "codigo": "P006",
+    "publicado": false,
+    "fecha_de_creacion": "2023-03-05T13:45:00Z"
+  }
+]
