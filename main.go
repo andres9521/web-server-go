@@ -12,7 +12,7 @@ import (
 
 // Definimos la estructura Productos y sus atributos con la letra inicial en mayuscula para que sean de tipo publico.
 type Producto struct {
-	Id              string    `json:"id"`
+	Id              int       `json:"id"`
 	Nombre          string    `json:"nombre"`
 	Precio          float64   `json:"precio"`
 	Stock           int       `json:"stock"`
@@ -57,7 +57,12 @@ func productosHandler(c *gin.Context) {
 
 func productParamsHandler(c *gin.Context) {
 	// Obtener los valores de los parámetros
-	id := c.Query("id")
+	idStr := c.Query("id")
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"error": "id debe ser un número entero"})
+		return
+	}
 	nombre := c.Query("nombre")
 	precioStr := c.Query("precio")
 	precio, err := strconv.ParseFloat(precioStr, 64)
@@ -115,7 +120,7 @@ func cargarProductos() ([]Producto, error) {
 
 	// Agregar el último producto a la lista
 	ultimoProducto := Producto{
-		Id:              "7",
+		Id:              7,
 		Nombre:          "Producto 7",
 		Precio:          99.99,
 		Stock:           10,
@@ -130,7 +135,12 @@ func cargarProductos() ([]Producto, error) {
 
 func productoPorIDHandler(c *gin.Context) {
 	// Obtener el ID del producto desde el parámetro de la ruta
-	id := c.Param("id")
+	idStr := c.Param("id")
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"error": "id debe ser un número entero"})
+		return
+	}
 
 	// Cargar la lista de productos
 	productos, err := cargarProductos()
